@@ -1,0 +1,38 @@
+<main class="container">
+		<h1 class="center-align">{{title}}</h1>
+		<div class="card-panel row center">
+			<h4>Register a new item</h4>
+			<div class="input-field col s6 offset-s3">
+          		<input [(ngModel)]="taskToEdit.description" id="description" type="text" class="validate">
+          		<label for="description">Description</label>
+        	</div>
+        	<div class="col s12">
+        		<input type="button" class="waves-effect btn" value="save"/>
+        	</div>
+        </div>
+		<div class="card-panel row">
+			<table class="striped">
+			<thead>
+				<th>Id</th>
+				<th>Description</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let task of tasks">
+					<td>{{task.id}}</td>
+					<td>{{task.description}}</td>
+					<td>
+						<input (click)="showTaskDetail(task)" type="button" value="Show"  data-target="modalShowTaskDetail" class="btn modal-trigger"/>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</main>
+	<div id="modalShowTaskDetail" class="modal">
+    	<div class="modal-content">
+    		<h4>Task Detail</h4>
+      		<h5>{{selectedTask.description}}</h5>
+    	</div>
+    	<div class="modal-footer">
+    	</div>
+  </div>

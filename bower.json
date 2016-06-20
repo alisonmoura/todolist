@@ -1,0 +1,21 @@
+{
+  "name": "todolist",
+  "description": "Testing Angular2",
+  "main": "",
+  "authors": [
+    "alison.moura@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alisonmoura/todolist",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "Materialize": "materialize#^0.97.6"
+  }
+}

@@ -1,4 +1,6 @@
 /node_modules/
+/bower_components/
 /typings/
+*.log
 *.js
 *.js.map
