@@ -20,7 +20,8 @@ export class AppComponent {
 	title = "Todo List";
 
 	public tasks = TASKS;
-	public taskToEdit = {};
+	public taskToEdit:Task = new Task;
+	public newTask:Task = new Task;
 
 	selectedTask: Task;
 
@@ -30,7 +31,12 @@ export class AppComponent {
 
 	showTaskDetail(task: Task){ 
 		this.selectedTask = task;
-		$('#modalShowTaskDetail').openModal();
+		// $('#modalShowTaskDetail').openModal();
+	};
+
+	addTask(){
+		this.tasks.push(this.newTask);
+		this.newTask = new Task;
 	};
 
 }

@@ -3,11 +3,11 @@
 		<div class="card-panel row center">
 			<h4>Register a new item</h4>
 			<div class="input-field col s6 offset-s3">
-          		<input [(ngModel)]="taskToEdit.description" id="description" type="text" class="validate">
+          		<input [(ngModel)]="newTask.description" id="description" type="text" class="validate">
           		<label for="description">Description</label>
         	</div>
         	<div class="col s12">
-        		<input type="button" class="waves-effect btn" value="save"/>
+        		<input (click)="addTask()" type="button" class="waves-effect btn" value="save"/>
         	</div>
         </div>
 		<div class="card-panel row">
