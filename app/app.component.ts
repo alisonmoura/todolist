@@ -1,11 +1,11 @@
 export class Task {
-	id: number;
+	done: boolean;
 	description: string;
 }
 
 const TASKS: Task[] = [
-		{id:1, description:"Some Thing"},
-		{id:2, description:"Other Thing"}
+		{done:false, description:"Some Thing"},
+		{done:false, description:"Other Thing"}
 	];
 
 import { Component } from '@angular/core'
@@ -29,14 +29,23 @@ export class AppComponent {
 		this.selectedTask = new Task();
 	}
 
-	showTaskDetail(task: Task){ 
+	showTaskDetail(task: Task){
 		this.selectedTask = task;
-		// $('#modalShowTaskDetail').openModal();
 	};
 
+
 	addTask(){
+		this.newTask.done = false;
 		this.tasks.push(this.newTask);
 		this.newTask = new Task;
 	};
+
+	doneTask(i:number){
+		this.tasks[i].done = this.tasks[i].done ? false : true;
+	}
+
+	showTaskDoneFormated(done: boolean){
+		return done ? "Yes":"Nope";
+	}
 
 }
